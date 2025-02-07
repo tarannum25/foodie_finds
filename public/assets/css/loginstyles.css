@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body{     
+    background: url('https://static.vecteezy.com/system/resources/previews/037/236/579/non_2x/ai-generated-beautuful-fast-food-background-with-copy-space-free-photo.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-container {
+    display: flex;
+    justify-content:flex-start /* Aligns the form to the left */
+   align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding-left: -15%; /* Adds space to shift left */
+   box-sizing: border-box;
+}
+
+.circle-form {
+    background: rgba(255, 255, 255, 0.2); /* Transparent glass effect */
+    backdrop-filter: blur(10px); /* Glass blur */
+    -webkit-backdrop-filter: blur(10px);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glass effect */
+}
+
+.circle-form h2 {
+    color: #ff0054;
+    margin-bottom: 20px;
+}
+
+.circle-form form {
+    width: 80%;
+}
+
+.circle-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.circle-form input:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.circle-form button {
+    background: rgba(255, 0, 84, 0.8); /* Semi-transparent button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.circle-form button:hover {
+    background: rgba(204, 0, 69, 0.9);
+}
+ .toggle-link {
+             display: block;
+             text-align: center;
+             margin-top: 10px;
+             color: #007bff;
+             text-decoration: none;
+         }
+         .toggle-link:hover {
+             text-decoration: underline;
+         }
+
+
+
+         /* Show the form based on the URL hash */
+        #login-form:target, #signup-form:target {
+            display: block;
+        }
+
+ 

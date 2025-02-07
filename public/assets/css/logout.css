@@ -1,0 +1,52 @@
+/* Reset some basic styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+/*    background:url(https://images.fineartamerica.com/images-medium-large-5/sad-food-face-science-photo-library.jpg)no-repeat center/cover;*/
+    background-color: #ffcb43;
+background-image: linear-gradient(319deg, #ffcb43 0%, #ff6425 37%, #ff0016 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.logout-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.logout-container h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Description styling */
+.logout-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button styling */
+.go-home-btn {
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.go-home-btn:hover {
+    background-color: #e55342;
+}
