@@ -9,7 +9,7 @@
         <div class="order-history">
             <!-- Order 1 -->
             <input type="radio" id="order1" name="order" class="toggle">
-            <label for="order1" class="order-label">Order #123456 - $23.97 (Jan 15, 2025)</label>
+            <label for="order1" class="order-label">Order #123456 - ₹123.97 (Jan 15, 2025)</label>
             <div class="order-details">
                 <table>
                     <tr>
@@ -33,7 +33,7 @@
 
             <!-- Order 2 -->
             <input type="radio" id="order2" name="order" class="toggle">
-            <label for="order2" class="order-label">Order #123457 - ₹457 (Jan 12, 2025)</label>
+            <label for="order2" class="order-label">Order #123457 - ₹1457 (Jan 12, 2025)</label>
             <div class="order-details">
                 <table>
                     <tr>

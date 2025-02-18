@@ -1,4 +1,4 @@
-<?php $this->use('templates/user.php', ['title' => 'Setting | User']) ?>
+<?php $this->use('templates/settings.php', ['title' => 'Setting | User']) ?>
 
 <div class="container">
         <h2>🍽️ Foodie Finds - User Settings</h2>

@@ -5,27 +5,35 @@ use Fantom\Database\Model;
 
 class Cart extends Model
 {
-	public $primary = "id";
-	public $stable = "cart";
+    public $primary = "id";
+    public $table = "carts";
 
-	public function find()
-	{
-        return $this->find($id);
-    }
-
-    public function addItem(array $data)
+    public function getCartItems($user_id)
     {
-        return $this->create();
+        return $this->where("user_id", $user_id)->get();
     }
 
-     public function updateItem($id)
+    
+    public function find_item($user_id, $product_id)
     {
-        return $this->update($id);
+        return $this->where("user_id", $user_id)
+                    ->andWhere("product_id", $product_id)
+                    ->first();
     }
 
-    public function deleteItem($id)
-        {
-            return $this->delete($id);
-        }           
+    // public function add_item(array $data)
+    // {
+    //     return $this->create($data);
+    // }
 
-}        
+    
+    // public function update_item($id, $data)
+    // {
+    //     return $this->update($id, $data);
+    // }
+
+    public function delete_item()
+    {
+        return $this->delete();
+    }
+}

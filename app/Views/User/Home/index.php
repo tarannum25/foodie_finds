@@ -34,74 +34,77 @@
 
 
 
-    <?php 
-$selected_category = $_GET['category'] ?? 'starter'; 
-?>
+  <?php 
+  $selected_category = $_GET['category'] ?? null;
+  ?>
 
-<!-- Starters Section -->
-<section id="starters" style="display: <?= $selected_category == 'starter' ? 'block' : 'none' ?>;">
-    <h3 class="underlined-heading">Starters</h3>
-    <div class="dishes-container">
-        <?php foreach ($starters as $dish): ?>
-            <div class="dish-card">
-                <a href="/user/food/details?id=<?= $dish->id ?>">
-                    <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
-                </a>
-                <h3><?= $dish->product_name ?></h3>
-                <p>₹<?= $dish->price_sp ?></p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+  <!-- Starters Section -->
+  <section id="starters" style="display: <?= !$selected_category || $selected_category == 'starter' ? 'block' : 'none' ?>;">
+      <h3 class="underlined-heading">Starters</h3>
+      <div class="dishes-container">
+          <?php foreach ($starters as $dish): ?>
+              <div class="dish-card">
+                  <a href="/user/food/details?id=<?= $dish->id ?>">
+                      <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
+                  </a>
+                  <h3><?= $dish->product_name ?></h3>
+                  <p>₹<?= $dish->price_sp ?></p>
+                  <form method="POST" action="/user/cart/add">
+                      <input type="hidden" name="product_id" value="<?= $dish->id ?>">
+                      <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                  </form>       
+              </div>
+          <?php endforeach; ?>
+      </div>
+  </section>
 
-<!-- Main Course Section -->
-<section id="main-course" style="display: <?= $selected_category == 'main' ? 'block' : 'none' ?>;">
-    <h3 class="underlined-heading">Main Course</h3>
-    <div class="dishes-container">
-        <?php foreach ($main_course as $dish): ?>
-            <div class="dish-card">
-                <a href="/user/food/details?id=<?= $dish->id ?>">
-                    <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
-                </a>
-                <h3><?= $dish->product_name ?></h3>
-                <p>₹<?= $dish->price_sp ?></p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+  <!-- Main Course Section -->
+  <section id="main-course" style="display: <?= !$selected_category || $selected_category == 'main' ? 'block' : 'none' ?>;">
+      <h3 class="underlined-heading">Main Course</h3>
+      <div class="dishes-container">
+          <?php foreach ($main_course as $dish): ?>
+              <div class="dish-card">
+                  <a href="/user/food/details?id=<?= $dish->id ?>">
+                      <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
+                  </a>
+                  <h3><?= $dish->product_name ?></h3>
+                  <p>₹<?= $dish->price_sp ?></p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+          <?php endforeach; ?>
+      </div>
+  </section>
 
-<!-- Desserts Section -->
-<section id="desserts" style="display: <?= $selected_category == 'dessert' ? 'block' : 'none' ?>;">
-    <h3 class="underlined-heading">Desserts</h3>
-    <div class="dishes-container">
-        <?php foreach ($desserts as $dish): ?>
-            <div class="dish-card">
-                <a href="/user/food/details?id=<?= $dish->id ?>">
-                    <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
-                </a>
-                <h3><?= $dish->product_name ?></h3>
-                <p>₹<?= $dish->price_sp ?></p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+  <!-- Desserts Section -->
+  <section id="desserts" style="display: <?= !$selected_category || $selected_category == 'dessert' ? 'block' : 'none' ?>;">
+      <h3 class="underlined-heading">Desserts</h3>
+      <div class="dishes-container">
+          <?php foreach ($desserts as $dish): ?>
+              <div class="dish-card">
+                  <a href="/user/food/details?id=<?= $dish->id ?>">
+                      <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
+                  </a>
+                  <h3><?= $dish->product_name ?></h3>
+                  <p>₹<?= $dish->price_sp ?></p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+          <?php endforeach; ?>
+      </div>
+  </section>
 
-<!-- Drinks Section -->
-<section id="drinks" style="display: <?= $selected_category == 'drinks' ? 'block' : 'none' ?>;">
-    <h3 class="underlined-heading">Drinks</h3>
-    <div class="dishes-container">
-        <?php foreach ($drinks as $dish): ?>
-            <div class="dish-card">
-                <a href="details.php?id=<?= $dish->id ?>">
-                    <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
-                </a>
-                <h3><?= $dish->product_name ?></h3>
-                <p>₹<?= $dish->price_sp ?></p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+  <!-- Drinks Section -->
+  <section id="drinks" style="display: <?= !$selected_category || $selected_category == 'drinks' ? 'block' : 'none' ?>;">
+      <h3 class="underlined-heading">Drinks</h3>
+      <div class="dishes-container">
+          <?php foreach ($drinks as $dish): ?>
+              <div class="dish-card">
+                  <a href="details.php?id=<?= $dish->id ?>">
+                      <img src="<?= $dish->image_url ?>" alt="<?= $dish->product_name ?>">
+                  </a>
+                  <h3><?= $dish->product_name ?></h3>
+                  <p>₹<?= $dish->price_sp ?></p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+          <?php endforeach; ?>
+      </div>
+  </section>

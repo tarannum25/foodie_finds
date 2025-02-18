@@ -26,19 +26,19 @@
                     <i class="ri-contrast-2-fill"></i>
                 </button>
 
-                <form action="/user/setting" method="GET">
-                    <button type="submit" class="header-btn" aria-label="Settings">
+                
+                    <a href="/user/setting"class="header-btn" aria-label="Settings">
                         <i class="ri-user-settings-line"></i>
-                    </button>
-                </form>
+                    </a>
+            
 
                 <a href="/user/orderhistory" class="header-btn" aria-label="Order History">
                     <i class="ri-history-line"></i>
                 </a>
 
-                <button class="header-btn" aria-label="Cart">
+                <a href="/user/checkout" class="header-btn"  aria-label="Cart">
                     <i class="ri-shopping-cart-2-fill"></i>
-                </button>
+                </a>
 
                 <a href="/auth/login/logout" class="header-btn" aria-label="Logout">
                     <i class="ri-logout-box-r-line"></i>
