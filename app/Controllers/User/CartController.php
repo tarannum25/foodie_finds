@@ -59,11 +59,31 @@ class CartController extends Controller
         $cartItem->delete();
         Session::flash("success", "Item removed from cart.");
                     }   
-        else {
-        Session::flash("error", "Item not found in cart.");
-             }
+       
 
         return redirect("/user/checkout/index");
+    }
+
+    protected function update()
+    { 
+        $product_id = (int) $_POST['product_id'];
+        $quantity = (int) $_POST['quantity'];
+        $user = Auth::user();
+
+        $cart = Cart::where('user_id', $user->id)->first();
+
+        if ($cart) {
+            $cart_item = CartItem::where('cart_id', $cart->id)
+                                ->where('product_id', $product_id)
+                                ->first();
+
+             $cart_item->quantity = $quantity;
+             $cart_item->save();
+        }
+
+        Session::flash('success', 'Quantity updated successfully');
+
+        redirect('/user/checkout');
     }
        
     protected function before()

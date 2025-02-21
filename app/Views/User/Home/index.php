@@ -2,6 +2,7 @@
 
 <!-- Main Content Section -->
 <main class="dashboard-content">
+
     <div class="search-bar">
         <form action="/user/search/index" method="get">
             <input name="q" type="text" id="search-box" placeholder="Search food items...">
@@ -10,14 +11,12 @@
     </div>
 
     <h2>𝔼𝕩𝕡𝕝𝕠𝕣𝕖 𝕆𝕦𝕣 𝔻𝕚𝕤𝕙𝕖𝕤 </h2>
+    <?php include VIEW_PATH .'/partials/_message.php' ?>
 
     <div class="dashboard">
         <div class="categories">
-            <?php
-                if (\Fantom\Session::hasFlash('error')) {
-                    $error = \Fantom\Session::flash('error');
-                }
-            ?>
+
+
             <a href="?category=starter" class="category-item <?= ($_GET['category'] ?? '') == 'starter' ? 'active' : '' ?>">
                 <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/972a37599772cdc7df93a0855ad87591" alt="Starter">
                 <span>Starter</span>

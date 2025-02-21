@@ -68,6 +68,7 @@ class CheckoutController extends Controller
             'discount'  => $discount,
             'total'     => $total,
             'delivery_charge' => $delivery_charge,
+            'cart_items' => $cart_items,
         ]);
 
         //           $this->view->render('User/Checkout/index.php', [
