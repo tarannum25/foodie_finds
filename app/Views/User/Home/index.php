@@ -13,6 +13,11 @@
 
     <div class="dashboard">
         <div class="categories">
+            <?php
+                if (\Fantom\Session::hasFlash('error')) {
+                    $error = \Fantom\Session::flash('error');
+                }
+            ?>
             <a href="?category=starter" class="category-item <?= ($_GET['category'] ?? '') == 'starter' ? 'active' : '' ?>">
                 <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/972a37599772cdc7df93a0855ad87591" alt="Starter">
                 <span>Starter</span>

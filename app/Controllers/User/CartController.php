@@ -46,6 +46,26 @@ class CartController extends Controller
         redirect("/user/home/index");
     }
 
+
+    protected function remove()
+    { 
+        $product_id = (int) $_POST['product_id']; 
+        $user = Auth::user();
+
+        $cartItem = CartItem::where('user_id', $user->id)
+                         ->where('product_id', $product_id)
+                         ->first();   
+        if ($cartItem) {
+        $cartItem->delete();
+        Session::flash("success", "Item removed from cart.");
+                    }   
+        else {
+        Session::flash("error", "Item not found in cart.");
+             }
+
+        return redirect("/user/checkout/index");
+    }
+       
     protected function before()
     {
         return (new AuthMiddleware)();

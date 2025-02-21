@@ -9,29 +9,34 @@ use Fantom\Controller;
 
 class OrderHistoryController extends Controller
 {
-    
+     
     protected function index()
     {
+
+        $user = Auth::user(); 
+        if (!$user) {
+
+        $this->view->render('auth/login'); 
+                }
     
-        $user = Auth::user();
-         $this->view->render('User/Orderhistory/index.php');
 
+   
+        $orders = Order::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
-        // if (!$user) {
-        //     redirect('auth/login');
-        // }
-
-        
-        // $orders = Order::where('user_id', $user->id);
-                       
-
-        // $this->view->render('User/Orderhistory/index.php');
+          
+        $this->view->render('user/orderhistory/index.php');
     }
 
+       protected function before()
+       {
+           return (new AuthMiddleware)();
+       }
 
-
-    protected function before()
-    {
-        return (new AuthMiddleware)();
-    }
 }
+
+
+       
+
+
+
+
