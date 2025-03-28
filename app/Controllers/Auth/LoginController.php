@@ -31,7 +31,11 @@ class LoginController extends Controller
 			redirect('auth/login');
 		}
 
-		redirect('user');
+		if (Auth::isAdmin()) {
+			redirect('admin');
+		} else {
+			redirect('user');
+		}
 	}
 
 	public function logout()

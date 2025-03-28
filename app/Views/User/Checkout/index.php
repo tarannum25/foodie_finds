@@ -48,8 +48,8 @@
     <p>Delivery Charges: <strong>₹99</strong></p>
     <hr>
     <p><strong>Total Payable: ₹<?= $total; ?></strong></p>
-    <a href="/user/thankyou">
-        <button>Proceed to Payment</button>
-    </a>
+    <form action="/user/order/create" method="post">
+        <button type="submit">Place Order</button>
+    </form>
 </div>
 </div>

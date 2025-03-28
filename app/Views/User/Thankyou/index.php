@@ -9,7 +9,7 @@
         <p><strong>Order ID:</strong> #123456</p>
 
         <div class="button-group">
-            <a href="/user/orderhistory"><button>View Order History</button></a>
-            <a href="/user/home"><button>Back to Home</button></a>
+            <a href="/user/order/history"><button>View Order History</button></a>
+            <a href="/user/home/index"><button>Back to Home</button></a>
         </div>
     </div>

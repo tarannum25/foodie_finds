@@ -32,7 +32,7 @@
                     </a>
             
 
-                <a href="/user/orderhistory" class="header-btn" aria-label="Order History">
+                <a href="/user/order/history" class="header-btn" aria-label="Order History">
                     <i class="ri-history-line"></i>
                 </a>
 

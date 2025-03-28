@@ -15,7 +15,7 @@ body.light-theme {
 }
 
 /* Dashboard Styling */
-.dashboard {
+   .dashboard {
     width: 100%;
     max-width: 12000px;
     margin: auto;
@@ -110,6 +110,64 @@ body.light-theme .header-btn {
     background: #ff8c42;
     color: #ffffff;
 }
+
+/*.notification {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+
+  .notification.is-success {
+
+    background-color: #daf6da;
+    color: #00ff00;
+  }*/
+
+  /* Notification Styling */
+  .header-notification {
+      position: fixed;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      max-width: 400px;
+      padding: 15px 30px;
+      background: rgba(50, 205, 50, 0.9); /* Success Green */
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+
+  /* Close Button Styling */
+  .close-btn {
+      text-decoration: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+  }
+
+  .close-btn:hover {
+      color: yellow;
+  }
+
+  /* Hide Notification When Close Button Clicked */
+  #close:target + .header-notification {
+      display: none;
+  }
+
 
 .categories {
     display: flex;

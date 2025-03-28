@@ -15,7 +15,9 @@
 	</div>
 <?php endif; ?>
 <?php if (Fantom\Session::hasFlash('success')): ?>
-	<div class="notification is-success">
+    <div class="header-notification is-success">
+        <button class="close-btn"> </button>
+        <a href="#close" class="close-btn">&times;</a>
 		<?= Fantom\Session::flash('success') ?>
-	</div>
+    </div>
 <?php endif; ?>

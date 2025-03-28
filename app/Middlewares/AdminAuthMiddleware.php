@@ -7,7 +7,7 @@ use App\Support\Authentication\Auth;
 /**
 * Auth Middleware
 */
-class AuthMiddleware
+class AdminAuthMiddleware
 {
 	protected $redirect_to = 'home/index';
 	
@@ -17,7 +17,7 @@ class AuthMiddleware
         	redirect($this->redirect_to);
         }
 
-        if (! Auth::isUser()) {
+        if (! Auth::isAdmin()) {
             redirect('auth/login');
         }
 

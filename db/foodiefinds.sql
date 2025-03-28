@@ -10,6 +10,7 @@ CREATE TABLE users (
     email VARCHAR(64) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     image_url VARCHAR(256),
+    role TINYINT(1) DEFAULT 2,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -63,7 +64,7 @@ CREATE TABLE orders (
 );
 
  --  Order Items Table
- DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS order_items;
 CREATE TABLE order_items (
     id INT AUTO_INCREMENT NOT NULL,
     product_id INT NOT NULL,
@@ -101,5 +102,8 @@ CREATE TABLE cart_items (
     FOREIGN KEY (cart_id) REFERENCES carts(id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
+
+INSERT INTO users(first_name, last_name, phone, email, password, image_url, role) VALUES
+('Admin', 'Account', '9112322222', 'admin@gmail.com', '$2y$10$Ss3ofcicj0/ozDlBOGdsCeT.zSp6xlsoNzlCuyW26iJ9/WNhFfqJ2', 'http://foodie_finds/assets/img/default-image.jpg', 1);
 
 SET FOREIGN_KEY_CHECKS=1;

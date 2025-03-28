@@ -83,4 +83,16 @@ class Auth
 	{
 		return self::$error;
 	}
+
+	public static function isAdmin()
+	{
+		$user = self::user();
+		return $user->role === 1;
+	}
+
+	public static function isUser()
+	{
+		$user = self::user();
+		return $user->role === 2;
+	}
 }

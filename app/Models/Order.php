@@ -2,7 +2,7 @@
 namespace App\Models;
 use Fantom\database\Model;
 
-class Order extends Models
+class Order extends Model
 {
 	public $primary ="id";
 	public $stable ="order";
@@ -33,5 +33,10 @@ class Order extends Models
 	       return $this->where('id', $order_id)->delete();
 	   }
 
+
+	   public function items()
+	       {
+	           return $this->hasMany(OrderItem::class, 'order_id', 'id');
+	       }
 
 }

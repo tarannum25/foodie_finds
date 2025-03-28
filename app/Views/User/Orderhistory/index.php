@@ -1,62 +1,40 @@
 <?php $this->use('templates/history.php', ['title' => 'Orderhistory| User']) ?>
 
 
-
 <div class="container">
         <h2>Your Order History 📜</h2>
         <p>Select an order to view details.</p>
-        <form action="/user/order history/index" method="POST"> 
+        <form action="/user/order/history" method="POST"> 
         <div class="order-history">
             <!-- Order 1 -->
-            <input type="radio" id="order1" name="order" class="toggle">
-            <label for="order1" class="order-label">Order #123456 - ₹123.97 (Jan 15, 2025)</label>
-            <div class="order-details">
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>Cheese Burger</td>
-                        <td>2</td>
-                        <td>₹258</td>
-                    </tr>
-                    <tr>
-                        <td>Pepperoni Pizza</td>
-                        <td>1</td>
-                        <td>₹199</td>
-                    </tr>
-                </table>
-                <p><strong>Total:</strong> ₹457</p>
-            </div>
+            <?php foreach ($orders as $index => $o): ?>
+                <input type="radio" id="order<?= $o->id ?>" name="order" class="toggle">
+                <label for="order<?= $o->id ?>" class="order-label">
+                    Order #<?= $o->id ?> - ₹<?= $o->sub_total ?> (<?= date('d M, Y', strtotime($o->created_at)) ?>)
+                </label>
+                <div class="order-details">
+                    <table>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        <?php foreach ($o->order_items as $order_item): ?>
+                            <tr>
+                                <td><?= $order_item->product->product_name ?></td>
+                                <td><?=$order_item->quantity?></td>
+                                <td>₹<?=$order_item->price_sp?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <p><strong>Total:</strong>₹<?= $o->sub_total ?></p>
+                </div>
+            <?php endforeach; ?>
 
-            <!-- Order 2 -->
-            <input type="radio" id="order2" name="order" class="toggle">
-            <label for="order2" class="order-label">Order #123457 - ₹1457 (Jan 12, 2025)</label>
-            <div class="order-details">
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>Pasta</td>
-                        <td>1</td>
-                        <td>₹99</td>
-                    </tr>
-                    <tr>
-                        <td>Salad</td>
-                        <td>1</td>
-                        <td>₹50</td>
-                    </tr>
-                </table>
-                <p><strong>Total:</strong> ₹149</p>
-            </div>
         </div>
+    </form>
 
        
-    </div>
+</div>
 
    

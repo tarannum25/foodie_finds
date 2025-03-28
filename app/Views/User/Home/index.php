@@ -2,6 +2,7 @@
 
 <!-- Main Content Section -->
 <main class="dashboard-content">
+    <?php include VIEW_PATH .'/partials/_message.php' ?>
 
     <div class="search-bar">
         <form action="/user/search/index" method="get">
@@ -11,7 +12,8 @@
     </div>
 
     <h2>𝔼𝕩𝕡𝕝𝕠𝕣𝕖 𝕆𝕦𝕣 𝔻𝕚𝕤𝕙𝕖𝕤 </h2>
-    <?php include VIEW_PATH .'/partials/_message.php' ?>
+    
+
 
     <div class="dashboard">
         <div class="categories">
@@ -111,4 +113,5 @@
               </div>
           <?php endforeach; ?>
       </div>
+
   </section>
