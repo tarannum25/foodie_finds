@@ -2,6 +2,7 @@
 
 
 <main class="content">
+    <?php include VIEW_PATH .'/partials/_message.php' ?>
     <div class="form-container">
         <h2>Create Category</h2>
         <form action="/admin/category/store" method="post" enctype="multipart/form-data">
@@ -18,8 +19,8 @@
                 <input name="photo" id="photo" type="file">
             </div>
             <div class="form-buttons">
-                <button type="submit" class="save-button">Save</button>
-                <button class="back-button">Back</button>
+                <button type="submit" class="btn">Save</button>
+                <!-- <button class="btn">Back</button> -->
             </div>
         </form>
     </div>

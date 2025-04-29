@@ -21,7 +21,7 @@
                      <li><a href="/admin/order/index"><i>&#128717;</i> Orders</a></li>
                      <li><a href="/admin/category/index"><i>&#128230;</i> Category</a></li>
                      <li><a href="/admin/product/index"><i>&#127828;</i> Products</a></li>
-                     <li><a href="#"><i>&#128682;</i> Logout</a></li>
+                     <li><a href="/admin/login"><i>&#128682;</i> Logout</a></li>
                  </ul>
              </aside>
              <div class="main-content">

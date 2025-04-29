@@ -5,13 +5,15 @@
     <div class="container">
         <div class="main-content">
             <main class="content">
+                <a href="/admin/user/create"class="btn"> + User</a>
                 <div class="table-container">
                     <h2>Users</h2>
                     <table>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>User Name</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                                 <th>Image</th>
                                 <th>Phone</th>
                                 <th>Email</th>
@@ -20,22 +22,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                             <?php foreach ($users as $u): ?>
                             <tr>
-                                <td>1</td>
-                                <td>Tarannum Mahtab</td>
+                                <td><?= $u->id ?></td>
+                                <td><?= $u->first_name ?></td>
+                                <td><?= $u->last_name ?></td>
                                 <td><img src="User.png" alt="Biryani" class="product-image"></td>
-                                <td>9330896193</td>
-                                <td>tarannum@gmail.com</td>
+                                <td><?= $u->phone ?></td>
+                                <td><?= $u->email ?></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><a href="#" class="edit-link">Edit</a></td>
+                                <td>
+                                    <a href="/admin/user/<?= $u->id ?>/view" class="view-link">View</a>
+                                    <a href="/admin/user/<?= $u->id ?>/edit" class="edit-link">Edit</a>
+                                </td>
                             </tr>
+                              <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <div class="form-buttons">
-                        <a href="#" class="save-button">Save</a>
-                        <a href="#" class="back-button">Back</a>
-                    </div>
+                    
                 </div>
             </main>
         </div>
     </div>
+
+
+    

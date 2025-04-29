@@ -5,7 +5,7 @@
 <div class="container">
     <div class="main-content">
         <main class="content">
-            <a href="/admin/category/create">Add Category</a>
+            <a href="/admin/category/create"class="btn"> + Category</a>
             <div class="table-container">
                 <h2>Category List</h2>
                 <table>
@@ -32,10 +32,10 @@
 
                     </tbody>
                 </table>
-                <div class="form-buttons">
+                <!-- <div class="form-buttons">
                     <a href="#" class="save-button">Save</a>
                     <a href="#" class="back-button">Back</a>
-                </div>
+                </div> -->
             </div>
         </main>
     </div>

@@ -8,6 +8,7 @@ use Fantom\Controller;
 use Fantom\Session;
 
 class CategoryController extends Controller
+
 {
     protected function index()
     {
@@ -25,7 +26,19 @@ class CategoryController extends Controller
 
     protected function edit()
     {
-        $this->view->render("Admin/Category/edit.php");
+        // 1. Find the category by ID
+        $category = Category::find($id);
+
+        // 2. If not found, redirect back with error
+        if (!$category) {
+            Session::flash("error", "Category not found!");
+            redirect("admin/category/index");
+            return;
+        }
+
+        // 3. Load the edit view with category data
+        return view("admin/Category/edit", ['category' => $category]);
+            $this->view->render("Admin/Category/edit.php");
     }
 
     protected function store()

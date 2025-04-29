@@ -1,6 +1,6 @@
 <?php 
 namespace App\Models;
-use Fantom\database\Model;
+use Fantom\Database\Model;
 
 class Order extends Model
 {

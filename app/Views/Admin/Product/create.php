@@ -2,41 +2,42 @@
 
 
 <main class="content">
+     <?php include VIEW_PATH .'/partials/_message.php' ?>
     <div class="form-container">
         <h2>Create Product</h2>
-        <form>
+        <form action="/admin/product/store" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label>Product Name</label>
-                <input type="text" required>
+                <label for="product_name">Product Name</label>
+                <input id="product_name" name="product_name" type="text" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
-                <input type="text" required>
+                <label for="description">Description</label>
+                <input id="description" name="description"type="text" required>
             </div>
             <div class="form-group">
-                <label>Mark Price</label>
-                <input type="number" required>
+                <label for="price_mp">Marked Price</label>
+                <input id="price_mp" name="price_mp"type="number" required>
             </div>
             <div class="form-group">
-                <label>Sale Price</label>
-                <input type="number" required>
+                <label for="price_sp">Sale Price</label>
+                <input id="price_sp" name="price_sp"type="number" required>
             </div>
             <div class="form-group">
                 <label>Category</label>
-                <select required>
-                    <option value="">Select Category</option>
-                    <option>Starter</option>
-                    <option>Main Course</option>
-                    <option>Drinks</option>
-                    <option>Desserts</option>
+                <select name="category_id" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <?php foreach($categories as $c): ?>
+                        <option value="<?= $c->id ?>"><?= $c->name ?></option>
+                    <?php endforeach; ?>
+
                 </select>
             </div>
             <div class="form-group">
-                <label>Image</label>
-                <input type="file" required>
+                <label for="Image">Image</label>
+                <input id="Image" name="Image"type="file" disabled>
             </div>
             <div class="form-buttons">
-                <a href="#" class="save-button">Save</a>
+                <button type="submit" class="save-button">Save</button>
                 <a href="#" class="back-button">Back</a>
             </div>
         </form>

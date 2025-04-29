@@ -4,25 +4,29 @@
 <main class="content">
     <div class="form-container">
         <h2>Create User</h2>
-        <form>
+        <form action="/admin/user/store" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" required>
-            </div>
-            <div class="form-group">
-                <label>Phone</label>
-                <input type="number" required>
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name"type="text" required>
             </div>
              <div class="form-group">
-                <label>Email</label>
-                <input type="email" required>
+                <label for="last_name">last Name</label>
+                <input id="ast_name" name="last_name"type="text" required>
             </div>
-            <!-- <div class="form-group">
-                <label>Image</label>
-                <input type="file" required>
-            </div> -->
-            <div class="form-buttons">
-                <a href="#" class="save-button">Save</a>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="number" required>
+            </div>
+             <div class="form-group">
+               <label for="email">Email</label>
+                <input id="email" name="email" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input id="image" name="image" type="file" disabled>
+            </div>
+           <div class="form-buttons">
+                <button type="submit" class="save-button">Save</button>
                 <a href="#" class="back-button">Back</a>
             </div>
         </form>

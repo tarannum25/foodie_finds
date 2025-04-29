@@ -5,21 +5,21 @@
     <div class="form-container">
         <h2>Edit Product</h2>
         <form>
-            <div class="form-group">
-                <label>Product Name</label>
-                <input type="text" required>
+           <div class="form-group">
+                <label for="product_name">Product Name</label>
+                <input id="product_name" name="product_name" type="text" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
-                <input type="text" required>
+                <label for="description">Description</label>
+                <input id="description" name="description"type="text" required>
             </div>
             <div class="form-group">
-                <label>Mark Price</label>
-                <input type="number" required>
+                <label for="price_mp">Marked Price</label>
+                <input id="price_mp" name="price_mp"type="number" required>
             </div>
             <div class="form-group">
-                <label>Sale Price</label>
-                <input type="number" required>
+                <label for="price_sp">Sale Price</label>
+                <input id="price_sp" name="price_sp"type="number" required>
             </div>
             <div class="form-group">
                 <label>Category</label>
