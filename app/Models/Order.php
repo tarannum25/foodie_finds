@@ -1,5 +1,6 @@
 <?php 
 namespace App\Models;
+use App\Models\User;
 use Fantom\Database\Model;
 
 class Order extends Model
@@ -13,9 +14,16 @@ class Order extends Model
 
 
 	public function find_order($order_id)
-	   {
+    {
 	       return $this->where('id', $order_id)->first();
-	   }
+	}
+
+    public function user()
+    {
+    	$user = User::find($this->user_id)->first();
+
+		return $user;
+    }
 
 	public function create_order()
 	{

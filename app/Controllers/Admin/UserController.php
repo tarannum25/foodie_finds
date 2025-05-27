@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Config;
 use App\Middlewares\AdminAuthMiddleware;
+use App\Models\Order;
 use App\Models\User;
 use Fantom\Controller;
 use Fantom\Session;
@@ -30,8 +31,9 @@ class UserController extends Controller
 		// URL: /admin/user/USER_ID/show
 		// User detail / show
 
+		$id = $this->route_params['id'];
 
-		$user = User::find($id);
+		$user = User::find($id)->first();
 
 		if (!$user) {
 			Session::flash("error", "User not found!");
@@ -39,9 +41,13 @@ class UserController extends Controller
 			return;
 		}
 
-		return $this->view->render("Admin/User/show.php", [
+		$orders = Order::where("user_id", $user->id)->get();
+
+		$this->view->render("Admin/User/show.php", [
 			'user' => $user,
-		]);
+			'orders' => $orders,
+		]);	
+			
 	}
 
 	protected function create()
@@ -55,8 +61,9 @@ class UserController extends Controller
 	{
 		// URL: /admin/user/USER_ID/edit
 		// User edit
+		$id = $this->route_params['id'];
 
-		$user = User::find($id);
+		$user = User::find($id)->first();
 
 		if (!$user) {
 			Session::flash("error", "User not found!");
@@ -64,8 +71,9 @@ class UserController extends Controller
 			return;
 		}
 
-		return $this->view->render("Admin/User/edit.php", [
+	      $this->view->render("Admin/User/edit.php", [
 			'user' => $user,
+
 		]);
 	}
 

@@ -26,9 +26,8 @@
                 <input id="image" name="image" type="file" disabled>
             </div>
            <div class="form-buttons">
-                <button type="submit" class="save-button">Save</button>
-                <a href="#" class="back-button">Back</a>
-            </div>
+               <button type="submit" class="btn">Save</button>
+           </div>
         </form>
     </div>
 </main>

@@ -26,8 +26,8 @@
              </aside>
              <div class="main-content">
                  <div class="header">
-                     <a href="#">Add Categories</a>
-                     <a href="#">Add Products</a>
+                     <!-- <a href="">Add Categories</a>
+                     <a href="#">Add Products</a> -->
                      <div class="profile">
                          Super Admin <img src="https://www.partysuppliesindia.com/cdn/shop/products/A3_43_fa283d51-14fb-4704-b57c-5ef5290f5a02.jpg?v=1735572737&width=1500" alt="Profile">
                      </div>

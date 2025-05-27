@@ -37,8 +37,7 @@
                 <input id="Image" name="Image"type="file" disabled>
             </div>
             <div class="form-buttons">
-                <button type="submit" class="save-button">Save</button>
-                <a href="#" class="back-button">Back</a>
+                <button type="submit" class="btn">Save</button>
             </div>
         </form>
     </div>

@@ -28,6 +28,13 @@ class OrderItem extends Model
 
 		return static::raw($sql, ['user_id' => $user_id]);
 	}
+
+	public function product()
+	{
+		$product = Product::find($this->product_id)->first();
+
+		return $product;
+	}
 }
 
 

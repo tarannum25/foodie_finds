@@ -5,7 +5,13 @@
     <div class="container">
         <div class="main-content">
             <main class="content">
-                <a href="/admin/order/create"class="btn"> + Order</a>
+                 <div class="action-bar">
+                <div class="search-wrapper">
+                    <i class="fa fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search orders...">
+                </div>
+                   <a href="/admin/order/create"class="btn"> + Order</a> 
+                </div>
                 <div class="table-container">
                     <h2>Orders</h2>
                     <table>
@@ -29,17 +35,13 @@
                                 <td><?= $o->sub_total ?></td>
                                 <td><span class="<?= $o->status ?>"></span></td>
                                 <td>
-                                    <a href="/admin/order/<?= $o->id ?>/show" class="view-link">View</a>
-                                    <a href="/admin/order/<?= $o->id ?>/edit" class="edit-link">Edit</a>
+                                <a href="/admin/order/<?= $o->id ?>/show" class="view-link">View</a>
                                 </td>
                                 <?php endforeach; ?>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="form-buttons">
-                        <a href="#" class="save-button">Save</a>
-                        <a href="#" class="back-button">Back</a>
-                    </div>
+                    
                 </div>
             </main>
         </div>

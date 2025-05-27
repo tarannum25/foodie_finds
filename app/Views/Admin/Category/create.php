@@ -20,7 +20,6 @@
             </div>
             <div class="form-buttons">
                 <button type="submit" class="btn">Save</button>
-                <!-- <button class="btn">Back</button> -->
             </div>
         </form>
     </div>

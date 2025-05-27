@@ -2,7 +2,7 @@
 
 <div class="checkout-container">
     <!-- Left Side: Food Items -->
-    <div class="food-list">
+    <div class="food-list">/
         <h2>Your Order</h2>
         <?php foreach ($products as $index => $p): ?>
             <div class="food-item">
